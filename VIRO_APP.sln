@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VIRO_APP", "VIRO_APP.csproj", "{BE98F038-B7B6-452C-B101-B63B59A4A3C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE98F038-B7B6-452C-B101-B63B59A4A3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE98F038-B7B6-452C-B101-B63B59A4A3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE98F038-B7B6-452C-B101-B63B59A4A3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE98F038-B7B6-452C-B101-B63B59A4A3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9971EBD4-15D7-4D5A-ACBF-B6420B56FE10}
+	EndGlobalSection
+EndGlobal

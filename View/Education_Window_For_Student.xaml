@@ -1,0 +1,32 @@
+﻿<Window x:Class="VIRO_APP.View.Education_Window_For_Student"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VIRO_APP.View"
+        mc:Ignorable="d"
+        Title="ВИРО" Height="650" Width="1100" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Обучение" Margin="5" FontSize="20" TextAlignment="Center"></TextBlock>
+        <DataGrid Grid.Row="1" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Курс" Binding="{Binding}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Прогресс" Binding="{Binding}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Скачать сертификат" Height="40" FontSize="20"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                </DataGrid.Columns>
+             </DataGrid>
+        <Button Grid.Row="3"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" Content="Выход" Height="40" Width="95" FontSize="20" Click="Back"></Button>
+    </Grid>
+</Window>

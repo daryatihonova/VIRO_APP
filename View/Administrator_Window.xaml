@@ -1,0 +1,20 @@
+﻿<Window x:Class="VIRO_APP.View.Administrator_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VIRO_APP.View"
+        mc:Ignorable="d"
+        Title="ВИРО" Height="600" Width="800" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
+    <Grid>
+        <Menu Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+           <MenuItem Header="Курс" FontSize="20" Height="40" Width="60" Margin="10 0 10 0" Click="Kurs"></MenuItem>
+            <MenuItem Header="Студент" FontSize="20" Height="40" Width="85" Margin=" 10 0 10 0" Click="Student"></MenuItem>
+            <MenuItem Header="Обучение" FontSize="20" Height="40" Width="105" Margin=" 10 0 10 0" Click="Education"></MenuItem>
+     </Menu>
+        
+           <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="90" Height="40" Content="Выход" FontSize="20" Margin="5" Click="Back"></Button>
+        
+       
+    </Grid>
+</Window>
