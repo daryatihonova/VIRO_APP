@@ -47,11 +47,47 @@ namespace VIRO_APP.View
 
         private void New_Student(object sender, RoutedEventArgs e)
         {
-            New_Student_Window new_Student_Window = new New_Student_Window();
+            New_Student_Window new_Student_Window = new New_Student_Window(null);
             new_Student_Window.Show();
         }
 
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            New_Student_Window new_Student_Window = new New_Student_Window((sender as Button).DataContext as Student);
+            new_Student_Window.DataChanged += UpdateDataGrid;
+            new_Student_Window.ShowDialog();
+        }
 
+        private void UpdateDataGrid(object sender, EventArgs e)
+        {
+            using (var context = new ViroContext())
+            {
+                Students = new ObservableCollection<Student>(context.Students.ToList());
+            }
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            var studentForDelete = Stud.SelectedItems.Cast<Student>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить {studentForDelete.Count()} элементов", "Внимание",
+                MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    using (var context = new ViroContext())
+                    {
+                        context.Students.RemoveRange(studentForDelete);
+                        context.SaveChanges();
+                        MessageBox.Show("Данные удалены");
+                        Students = new ObservableCollection<Student>(context.Students.ToList());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
 
     }
 }
