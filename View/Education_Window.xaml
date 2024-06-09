@@ -21,11 +21,11 @@
 
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Margin="5" Text="Обучение" FontSize="20" TextAlignment="Center" ></TextBlock>
 
-        <DataGrid Grid.Row="1" Grid.RowSpan="2">
+        <DataGrid x:Name="StCo" Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding StudentCourses}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Студент"   FontSize="20" Binding="{Binding}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Курс"  FontSize="20" Binding="{Binding}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Прогресс" FontSize="20" Binding="{Binding}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Студент"   FontSize="18" Binding="{Binding Student.FullName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Курс"  FontSize="18" Binding="{Binding Course.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Прогресс" FontSize="18" Binding="{Binding Progress}"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

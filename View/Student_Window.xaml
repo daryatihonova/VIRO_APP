@@ -15,17 +15,17 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="Студент" Margin="5" TextAlignment="Center" FontSize="20"></TextBlock>
-        <DataGrid Grid.Row="1" Grid.RowSpan="2">
+        <DataGrid x:Name="Stud" Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding Students}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Код" Binding="{Binding}" FontSize="20" Width="40"></DataGridTextColumn>
-                <DataGridTextColumn Header="Имя" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата рождения" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Образование" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Должность" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Логин" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
-                <DataGridTextColumn Header="Пароль" Binding="{Binding}" FontSize="20"></DataGridTextColumn>
+               
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" FontSize="18"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" FontSize="18"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" FontSize="18"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Birthday, StringFormat='dd/MM/yyyy'}" FontSize="18"></DataGridTextColumn>
+                <DataGridTextColumn Header="Образование" Binding="{Binding Education}" FontSize="18" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Post}" FontSize="18"></DataGridTextColumn>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" FontSize="18"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" FontSize="18"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -29,15 +29,16 @@
         <TextBlock Grid.Row="4" Text="Дата начала:" Margin="5" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="5" Text="Дата окончания:" Margin="5" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="6" Text="Куратор:" Margin="5" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Height="40" FontSize="20"></TextBox>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="40" FontSize="20"></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Height="40" FontSize="20"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Height="40" FontSize="20"></TextBox>
-        <DatePicker Grid.Row="4" Grid.Column="1" Margin="5" Height="40" FontSize="20"></DatePicker>
-        <DatePicker Grid.Row="5" Grid.Column="1" Margin="5" Height="40" FontSize="20"></DatePicker>
-        <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Height="40" FontSize="20"></TextBox>
+
+        <TextBox x:Name="CatText" Grid.Row="0" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding AudiencyCategory}"></TextBox>
+        <TextBox x:Name="NameText" Grid.Row="1" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding Name}"></TextBox>
+        <TextBox x:Name="HourText" Grid.Row="2" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding NumberOfHourse}"></TextBox>
+        <TextBox x:Name="PeopText" Grid.Row="3" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding NumberOfPeople}"></TextBox>
+        <DatePicker x:Name="HachText" Grid.Row="4" Grid.Column="1" Margin="5" Height="40" FontSize="20" SelectedDate="{Binding StartDate}"></DatePicker>
+        <DatePicker x:Name="KonText" Grid.Row="5" Grid.Column="1" Margin="5" Height="40" FontSize="20" SelectedDate="{Binding FinishDate}" ></DatePicker>
+        <TextBox x:Name="PrepText" Grid.Row="6" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding CourseSupervisor}"></TextBox>
         <StackPanel  Orientation="Horizontal" Margin="5" Grid.Row="7" Grid.Column="1" Width="300">
-            <Button Content="Сохранить" Height="40" Width="105" Margin="5 0 5 0" FontSize="20"></Button>
+            <Button Content="Сохранить" Height="40" Width="105" Margin="5 0 5 0" FontSize="20" Click="Save"></Button>
             <Button Content="Отмена" Height="40" Width="105" Margin="5 0 5 0" FontSize="20" Click="Back"></Button>
         </StackPanel>
     </Grid>
