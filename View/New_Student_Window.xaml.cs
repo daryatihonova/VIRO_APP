@@ -31,7 +31,7 @@ namespace VIRO_APP.View
             if (selectedStudent != null)
                 _currentStudent = selectedStudent;
             DataContext = _currentStudent;
-            //PassText.LostFocus += PasswordBox_LostFocus;
+            PassText.LostFocus += PasswordBox_LostFocus;
         }
 
         private void Close(object sender, RoutedEventArgs e)
@@ -95,30 +95,30 @@ namespace VIRO_APP.View
         }
 
 
-        //private void PasswordBox_LostFocus(object sender, EventArgs e)
-        //{
-        //    string password = PassText.Text;
-        //    if (password.Length < 6)
-        //    {
-        //        MessageBox.Show("Пароль должен содержать минимум 6 символов", "Ошибка");
-        //    }
-        //    else if (password.Length > 10)
-        //    {
-        //        MessageBox.Show("Пароль должен содержать менее 10 символов", "Ошибка");
-        //    }
-        //    else if (password.Any(char.IsUpper))
-        //    {
-        //        MessageBox.Show("Пароль должен содержать минимум 1 прописную букву", "Ошибка");
-        //    }
-        //    else if (password.Any(char.IsDigit))
-        //    {
-        //        MessageBox.Show("Пароль должен содержать минимум 1 цифру", "Ошибка");
-        //    }
-        //    else if (password.Any(c => "!@#$%^".Contains(c)))
-        //    {
-        //        MessageBox.Show("Пароль должен содержать минимум один из следующих символов: ! @ # $ % ^.", "Ошибка");
-        //    }
-        //}
+        private void PasswordBox_LostFocus(object sender, EventArgs e)
+        {
+            string password = PassText.Text;
+            if (password.Length < 6)
+            {
+                MessageBox.Show("Пароль должен содержать минимум 6 символов", "Ошибка");
+            }
+            else if (password.Length > 10)
+            {
+                MessageBox.Show("Пароль должен содержать менее 10 символов", "Ошибка");
+            }
+            else if (password.Any(char.IsUpper))
+            {
+                MessageBox.Show("Пароль должен содержать минимум 1 прописную букву", "Ошибка");
+            }
+            else if (password.Any(char.IsDigit))
+            {
+                MessageBox.Show("Пароль должен содержать минимум 1 цифру", "Ошибка");
+            }
+            else if (password.Any(c => "!@#$%^".Contains(c)))
+            {
+                MessageBox.Show("Пароль должен содержать минимум один из следующих символов: ! @ # $ % ^.", "Ошибка");
+            }
+        }
 
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.InkML;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,8 @@ namespace VIRO_APP.View
 
             if (selectedCourse != null)
                 _currentCourse = selectedCourse;
+            HachText.SelectedDate = DateTime.Today;
+            KonText.SelectedDate= DateTime.Today;
 
             DataContext = _currentCourse;
         }

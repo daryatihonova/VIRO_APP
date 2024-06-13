@@ -17,14 +17,11 @@ using VIRO_APP.Models;
 
 namespace VIRO_APP.View
 {
-    /// <summary>
-    /// Логика взаимодействия для New_Education_Window.xaml
-    /// </summary>
     public partial class New_Education_Window : Window
     {
         private StudentCourse _currentStudentCourse = new StudentCourse();
-        public delegate void DataChangedEvantHandler(object sender, EventArgs e);
 
+        public delegate void DataChangedEvantHandler(object sender, EventArgs e);
         public event DataChangedEvantHandler DataChangedEvant;
 
         public New_Education_Window(StudentCourse selectedStudentCourse)
@@ -37,7 +34,6 @@ namespace VIRO_APP.View
                 DataContext = _currentStudentCourse;
             }
 
-
             using (var context = new ViroContext())
             {
                 Students = new ObservableCollection<Student>(context.Students.ToList());
@@ -45,7 +41,6 @@ namespace VIRO_APP.View
             StudentBox.ItemsSource = Students;
             DataContext = _currentStudentCourse;
             StudentBox.SelectionChanged += StudentBox_SelectionChanged;
-
 
             using (var context = new ViroContext())
             {
@@ -56,29 +51,36 @@ namespace VIRO_APP.View
             CourseBox.SelectionChanged += CourseBox_SelectionChanged;
         }
 
-        public ObservableCollection<Student> Students { get;set; }
-        public ObservableCollection<Course> Courses { get;set; }
-
+        public ObservableCollection<Student> Students { get; set; }
+        public ObservableCollection<Course> Courses { get; set; }
 
         public void StudentBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedStudent = (Student) StudentBox.SelectedItem;
+            var selectedStudent = (Student)StudentBox.SelectedItem;
             if (selectedStudent != null)
             {
                 _currentStudentCourse.StudentId = selectedStudent.StudentId;
-             }
+            }
         }
 
         private void CourseBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedCourse = (Course)CourseBox.SelectedItem;
-            if(selectedCourse != null)
+            if (selectedCourse != null)
             {
                 _currentStudentCourse.CourseId = selectedCourse.CourseId;
+                // Find the course's end date in the database
+                using (var context = new ViroContext())
+                {
+                    var course = context.Courses.FirstOrDefault(c => c.CourseId == selectedCourse.CourseId);
+                    if (course != null)
+                    {
+                        // Update the TextBlock with the end date
+                        Data.Text = $"Дата окончания: {course.FinishDate.ToShortDateString()}";
+                    }
+                }
             }
-
         }
-
 
         private void Save(object sender, EventArgs e)
         {
@@ -91,8 +93,7 @@ namespace VIRO_APP.View
                         StudentId = _currentStudentCourse.StudentId,
                         CourseId = _currentStudentCourse.CourseId,
                         Progress = bool.Parse(ProgressBox.Text)
-
-                };
+                    };
                     context.StudentCourses.Add(newStudentCourse);
                 }
                 else
@@ -108,11 +109,9 @@ namespace VIRO_APP.View
                 context.SaveChanges();
                 DataContext = _currentStudentCourse;
                 DataChangedEvant?.Invoke(this, EventArgs.Empty);
-
             }
             MessageBox.Show("Данные успешно сохранены");
         }
-
 
         private void Close(object sender, RoutedEventArgs e)
         {

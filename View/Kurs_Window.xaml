@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VIRO_APP.View"
         mc:Ignorable="d"
-        Title="ВИРО" Height="650" Width="1300" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
+        Title="ВИРО" Height="650" Width="1000" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -14,10 +14,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="0.3*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+       
 
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Курс" TextAlignment="Center" FontSize="20" Margin="5" ></TextBlock>
         <DataGrid x:Name="Kurs" Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding Courses}" AutoGenerateColumns="False" CanUserAddRows="False">
@@ -45,11 +42,7 @@
             <Button Content="Удалить" Height="40" Width="95" Margin="5 0 5 0" FontSize="20" HorizontalAlignment="Right" Click="Delete_Kurs"></Button>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-            <TextBlock Text="Поиск по названию" Margin="5" TextAlignment="Center" FontSize="20"></TextBlock>
-            <TextBox x:Name="Kurs_Search" Margin="10" Height="40" FontSize="18"></TextBox>
-            <Button Content="Поиск" Height="40" Width="90" Margin="5" FontSize="20" Click="Click_Kurs_Search" ></Button>
-        </StackPanel>
+       
         
         <Button Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Назад" Height="40" Width="90" FontSize="20" Margin="5" Click="Back"></Button>
     </Grid>

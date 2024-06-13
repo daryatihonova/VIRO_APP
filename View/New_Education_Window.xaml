@@ -23,6 +23,7 @@
         <ComboBox x:Name="StudentBox" Grid.Row="0" Grid.Column="1" Margin="5" Height="40" FontSize="20" ItemsSource="{Binding Students}" DisplayMemberPath="FullName" SelectionChanged="StudentBox_SelectionChanged"></ComboBox>
         <ComboBox x:Name="CourseBox" Grid.Row="1" Grid.Column="1" Margin="5" Height="40" FontSize="20" ItemsSource="{Binding Courses}" DisplayMemberPath="Name" SelectionChanged="CourseBox_SelectionChanged"></ComboBox>
         <TextBox x:Name="ProgressBox" Grid.Row="2" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding Progress}"></TextBox>
+        <TextBlock x:Name="Data" Grid.Row="3" Grid.Column="0" Margin="5" FontSize="20"></TextBlock>
         <StackPanel Orientation="Horizontal" Margin="5" Grid.Row="3" Grid.Column="1" Height="40" Width="250">
             <Button Content="Сохранить" Height="40" Width="105" Margin="5 0 5 0" FontSize="20" Click="Save"></Button>
             <Button Content="Отмена" Height="40" Width="105" Margin="5 0 5 0" FontSize="20" Click="Close"></Button>

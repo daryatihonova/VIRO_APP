@@ -13,7 +13,7 @@ public partial class Student
 
     public string? Patronymic { get; set; }
 
-    public DateTime Birthday { get; set; }
+    public DateTime Birthday { get; set; } = DateTime.Now;
 
     public string Education { get; set; } = null!;
 

@@ -74,8 +74,8 @@ namespace VIRO_APP.View
             // Получаем данные о курсе и студенте
             var courseName = CourseName.GetCellContent(StudentDataGrid.SelectedItem) as TextBlock;
             var studentName = StudentTextBlock.Text;
-            var finishDate = Course.FinishDate; // Получаем дату окончания курса
-            var courseSupervisor = Course.CourseSupervisor; // Получаем проводившего курс
+            //var finishDate = Course.FinishDate; // Получаем дату окончания курса
+            //var courseSupervisor = Course.CourseSupervisor; // Получаем проводившего курс
 
             // Создаем диалоговое окно для сохранения файла
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -107,8 +107,8 @@ namespace VIRO_APP.View
                     document.InsertParagraph(studentName, false, textFormat);
                     document.InsertParagraph("Курс: " + courseName.Text, false, textFormat);
                     document.InsertParagraph("Курс успешно пройден", false, textFormat);
-                    document.InsertParagraph("Дата окончания курса: " + finishDate.ToShortDateString(), false, textFormat);
-                    document.InsertParagraph("Проводивший курс: " + courseSupervisor, false, textFormat);
+                    //document.InsertParagraph("Дата окончания курса: " + finishDate.ToShortDateString(), false, textFormat);
+                    //document.InsertParagraph("Проводивший курс: " + courseSupervisor, false, textFormat);
 
                     // Сохраняем документ
                     document.Save();

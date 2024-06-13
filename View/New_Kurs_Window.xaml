@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:VIRO_APP.View"
         mc:Ignorable="d"
         Title="ВИРО" Height="600" Width="800" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
@@ -34,8 +35,8 @@
         <TextBox x:Name="NameText" Grid.Row="1" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding Name}"></TextBox>
         <TextBox x:Name="HourText" Grid.Row="2" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding NumberOfHourse}"></TextBox>
         <TextBox x:Name="PeopText" Grid.Row="3" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding NumberOfPeople}"></TextBox>
-        <DatePicker x:Name="HachText" Grid.Row="4" Grid.Column="1" Margin="5" Height="40" FontSize="20" SelectedDate="{Binding StartDate}"></DatePicker>
-        <DatePicker x:Name="KonText" Grid.Row="5" Grid.Column="1" Margin="5" Height="40" FontSize="20" SelectedDate="{Binding FinishDate}" ></DatePicker>
+        <DatePicker x:Name="HachText" Grid.Row="4" Grid.Column="1" Margin="5" Height="40" FontSize="20" SelectedDate="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+        <DatePicker x:Name="KonText" Grid.Row="5" Grid.Column="1" Margin="5" Height="40" FontSize="20" SelectedDate="{Binding FinishDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
         <TextBox x:Name="PrepText" Grid.Row="6" Grid.Column="1" Margin="5" Height="40" FontSize="20" Text="{Binding CourseSupervisor}"></TextBox>
         <StackPanel  Orientation="Horizontal" Margin="5" Grid.Row="7" Grid.Column="1" Width="300">
             <Button Content="Сохранить" Height="40" Width="105" Margin="5 0 5 0" FontSize="20" Click="Save"></Button>

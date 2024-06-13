@@ -89,30 +89,7 @@ namespace VIRO_APP.View
 
         }
 
-        private void Click_Kurs_Search(object sender, RoutedEventArgs e)
-        {
-            string kurs_Search = Kurs_Search.Text;
-            if (string.IsNullOrEmpty(kurs_Search))
-            {
-                Courses = new ObservableCollection<Course>(_courses);
-            }
-            else
-            {
-                using (var context = new ViroContext())
-                {
-                    var courses = context.Courses.Where(c => c.Name == kurs_Search).ToList();
-                if (courses.Count == 0)
-                    {
-                        MessageBox.Show("Такого курса не существует.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    else
-                    {
-                        Courses = new ObservableCollection<Course>(courses);
-                    }
-                
-                }
-            }
-        }
+       
 
 
 
