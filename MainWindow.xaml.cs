@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VIRO_APP.Models;
 using VIRO_APP.View;
 
 namespace VIRO_APP
@@ -28,21 +29,35 @@ namespace VIRO_APP
 
         private void Open(object sender, RoutedEventArgs e)
         {
-            var login = logText.Text;
-            var pass = pasText.Password;
-
-            if (login == "admin" && pass == "admin") 
-            { 
-                Administrator_Window administrator_Window = new Administrator_Window();
-                this.Hide();
-                administrator_Window.Show();
-            }
-            else
+            using (var context = new ViroContext())
             {
-                Education_Window_For_Student education_Window_For_Student = new Education_Window_For_Student();
-                this.Hide();
-                education_Window_For_Student.Show();
+                var login = logText.Text;
+                var pass = pasText.Password;
+                if (login == "admin" && pass == "admin")
+                {
+                    Administrator_Window administrator_Window = new Administrator_Window();
+                    this.Hide();
+                    administrator_Window.Show();
+                }
+                else
+                {
+                    var user = context.Students.FirstOrDefault(u => u.Login == login && u.Password == pass);
+                    if (user != null)
+                    {
+                        Education_Window_For_Student education_Window_For_Student = new Education_Window_For_Student(user.StudentId);
+                        this.Hide();
+                        education_Window_For_Student.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неверный логин или пароль.", "Ошибка");
+                    }
+                   
+                }
             }
+           
+
+           
         }
        
             

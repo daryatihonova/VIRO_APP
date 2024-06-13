@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,8 +50,48 @@ namespace VIRO_APP.View
 
         private void New_Education(object sender, RoutedEventArgs e)
         {
-            New_Education_Window new_Education_Window = new New_Education_Window();
+            New_Education_Window new_Education_Window = new New_Education_Window(null);
             new_Education_Window.Show();
+        }
+
+        private void change(object sender, RoutedEventArgs e)
+        {
+            New_Education_Window edit_Education = new New_Education_Window((sender as Button).DataContext as StudentCourse );
+            //edit_Education.DataChanged += UpdateDataGrid;
+            edit_Education.ShowDialog();
+        }
+
+        private void UpdateDataGrid(object sender, DataGridRowEventArgs e)
+        {
+            using(var context = new ViroContext())
+            {
+                Studentcourses = new ObservableCollection<StudentCourse>(context.StudentCourses.ToList());
+            }
+        }
+
+
+
+        private void delete(object sender, RoutedEventArgs e)
+        {
+            var studentCoursefordelete = StCo.SelectedItems.Cast<StudentCourse>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить {studentCoursefordelete.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    using (var context = new ViroContext())
+                    {
+                        context.StudentCourses.RemoveRange(studentCoursefordelete);
+                        context.SaveChanges();
+                        MessageBox.Show("Данные удалены");
+                        Studentcourses = new ObservableCollection<StudentCourse>(context.StudentCourses.ToList());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
     }
 }
