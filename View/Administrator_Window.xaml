@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:VIRO_APP.View"
         mc:Ignorable="d"
         Title="ВИРО" Height="600" Width="800" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
-    <Grid>
+    <Grid Background="#B5D5CA">
         <Menu Height="40" VerticalAlignment="Top" HorizontalAlignment="Stretch">
            <MenuItem Header="Курс" FontSize="20" Height="40" Width="60" Margin="10 0 10 0" Click="Kurs"></MenuItem>
             <MenuItem Header="Студент" FontSize="20" Height="40" Width="85" Margin=" 10 0 10 0" Click="Student"></MenuItem>
             <MenuItem Header="Обучение" FontSize="20" Height="40" Width="105" Margin=" 10 0 10 0" Click="Education"></MenuItem>
      </Menu>
-        
-           <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="90" Height="40" Content="Выход" FontSize="20" Margin="5" Click="Back"></Button>
+
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="90" Height="40" Content="Выход" FontSize="20" Margin="5" Click="Back" Background="#fffcd6"></Button>
         
        
     </Grid>

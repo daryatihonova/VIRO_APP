@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VIRO_APP"
         mc:Ignorable="d"
         Title="ВИРО" Height="600" Width="800" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
-    <Grid>
+    <Grid Background="#B5D5CA">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -22,7 +22,7 @@
         <TextBox x:Name="logText" Grid.Row="1" Grid.Column="1" Height="40" FontSize="20" Margin="10"></TextBox>
         <TextBlock Grid.Row="2" Text="Пароль" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <PasswordBox x:Name="pasText" Grid.Column="1" Grid.Row="2" Height="40" Margin="10" FontSize="20"></PasswordBox>
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Вход" FontSize="20" Height="40" Width="90" Click="Open"></Button>
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Вход" FontSize="20" Height="40" Width="90" Click="Open" Background="#fffcd6"></Button>
     </Grid>
     
 </Window>

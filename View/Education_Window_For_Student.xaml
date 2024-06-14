@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:VIRO_APP.View"
         mc:Ignorable="d"
         Title="ВИРО" Height="600" Width="800" Icon="C:\Users\Darya\OneDrive\Рабочий стол\производственная практика май 2024\icon.png" ResizeMode="NoResize">
-  
-    <Grid>
+
+    <Grid Background="#B5D5CA">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
@@ -24,6 +24,6 @@
              </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="4"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" Content="Выход" Height="40" Width="95" FontSize="20" Click="Back"></Button>
+        <Button Grid.Row="4"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" Content="Выход" Height="40" Width="95" FontSize="20" Click="Back" Background="#fffcd6"></Button>
     </Grid>
 </Window>
