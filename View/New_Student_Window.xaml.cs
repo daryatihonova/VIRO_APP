@@ -92,6 +92,7 @@ namespace VIRO_APP.View
 
             }
             MessageBox.Show("Информация сохранена", "Внимание");
+            
         }
 
 
@@ -106,15 +107,15 @@ namespace VIRO_APP.View
             {
                 MessageBox.Show("Пароль должен содержать менее 10 символов", "Ошибка");
             }
-            else if (password.Any(char.IsUpper))
+            else if (!password.Any(char.IsUpper))
             {
                 MessageBox.Show("Пароль должен содержать минимум 1 прописную букву", "Ошибка");
             }
-            else if (password.Any(char.IsDigit))
+            else if (!password.Any(char.IsDigit))
             {
                 MessageBox.Show("Пароль должен содержать минимум 1 цифру", "Ошибка");
             }
-            else if (password.Any(c => "!@#$%^".Contains(c)))
+            else if (!password.Any(c => "!@#$%^".Contains(c)))
             {
                 MessageBox.Show("Пароль должен содержать минимум один из следующих символов: ! @ # $ % ^.", "Ошибка");
             }
